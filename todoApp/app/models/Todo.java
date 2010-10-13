@@ -21,4 +21,9 @@ public class Todo extends Model {
     @Temporal(TemporalType.DATE)
     public Date dueDate;
 
+    public Todo(String title, Date dueDate) {
+        this.title=title;
+        this.dueDate=dueDate;
+        todoDone=false;
+    }
 }
