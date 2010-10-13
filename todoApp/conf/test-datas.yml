@@ -1,0 +1,25 @@
+Todo(t1):
+  title: Buy some milk
+  todoDone: false
+  dueDate: 2010-10-19
+
+Todo(t2):
+  title: Payer la facture d'électricité
+  todoDone: false
+  dueDate: 2010-10-21
+
+Todo(t3):
+  title: Acheter des lentilles de contact
+  todoDone: false
+  dueDate: 2010-10-22
+
+Todo(t4):
+  title: Vérifier le niveau d'huile de la voiture
+  todoDone: false
+  dueDate: 2010-10-29
+
+Todo(t5):
+  title: Dentiste
+  todoDone: false
+  dueDate: 2010-10-28
+      

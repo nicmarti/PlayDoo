@@ -3,6 +3,8 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 /**
@@ -15,6 +17,8 @@ import java.util.Date;
 public class Todo extends Model {
     public String title;
     public boolean todoDone;
+
+    @Temporal(TemporalType.DATE)
     public Date dueDate;
 
 }
