@@ -4,8 +4,11 @@
 <div class="grid_12">
 
     <h1>Todo list</h1>
-    <h3>Step 1: display a simple list of objects</h3>
+    <h3>Step 2: Iterate</h3>
 
-    <pre>${listOfTodos}</pre>
-
+    <ul>
+    #{list items:listOfTodos, as:'todoItem'}
+       <li><strong>${todoItem.title}</strong> ${todoItem.dueDate.format('EEEE dd MMMM yyyy')} ${todoItem.todoDone}</li>
+    #{/list}
+    </ul>
 </div>
