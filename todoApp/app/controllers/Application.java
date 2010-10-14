@@ -20,4 +20,9 @@ public class Application extends Controller {
         index();
     }
 
+    public static void show(Long id,String title){
+        Todo event=Todo.findById(id);
+        render(event);
+    }
+
 }

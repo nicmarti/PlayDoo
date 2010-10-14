@@ -9,7 +9,7 @@
 
     <ul>
         #{list items:listOfTodos, as:'todoItem'}
-        <li><strong>${todoItem.title}</strong> ${todoItem.dueDate?.format('EEEE dd MMMM yyyy')} ${todoItem.todoDone}</li>
+        <li><strong>#{a @show(todoItem.id,todoItem.title)}${todoItem.title}#{/a}</strong> ${todoItem.dueDate?.format('EEEE dd MMMM yyyy')} ${todoItem.todoDone}</li>
         #{/list}
     </ul>
 

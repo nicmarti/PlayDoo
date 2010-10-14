@@ -1,6 +1,6 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
+
+
+GET /event/{title}/{id} Application.show
 
 # Home page
 GET     /                                       Application.index
