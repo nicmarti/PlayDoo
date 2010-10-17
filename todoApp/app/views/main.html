@@ -2,25 +2,42 @@
 
 <html>
 <head>
-    <title>#{get 'title' /}</title>
+    <title>#{get 'title' /} ★ by Play! Framework</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+    <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/style.css'}">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="@{'public/stylesheets/south-street/jquery-ui-1.7.2.custom.css'}"/>
     #{get 'moreStyles' /}
     <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+
+    <script src="@{'public/javascripts/jquery-ui-1.7.2.custom.min.js'}" type="text/javascript" charset="utf-8"></script>
+    <script src="@{'public/javascripts/jquery.editinplace.packed.js'}" type="text/javascript" charset="utf-8"></script>
+
     #{get 'moreScripts' /}
 </head>
 <body>
-<div class="container_12" id="site">
-    <div id="header">
+<div class="container_12" id="zencontact">
+    <header>
         <h1>Soft Shake</h1>
+
         <h3>Play! Framework demo</h3>
+
         <h3>Nicolas Martignole</h3>
-        <div class="clear"></div>
-    </div>
+    </header>
 
+    <nav>
+        <a id="home" href="@{index()}" class="${request.action =~ /index/ ? 'selected' : ''}">Home</a>
+    </nav>
 
-    #{doLayout /}
+    <section>
+        #{doLayout /}
+    </section>
+
+    <footer>
+        Copyright(c) 2010 - N.Martignole - Travail distrubé en licence Commons Creatives - parent / share alike / no
+        commercial.
+    </footer>
 </div>
 </body>
 </html>

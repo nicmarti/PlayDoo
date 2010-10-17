@@ -25,4 +25,8 @@ public class Application extends Controller {
         render(event);
     }
 
+    public static void form(Long id){
+        render();
+    }
+
 }

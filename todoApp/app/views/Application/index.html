@@ -1,29 +1,24 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<div class="grid_7">
+<table>
+	<thead>
+		<tr>
+			<th class="title">Title</th>
+			<th class="dueDate">Due Date</th>
+			<th class="todoDone">todoDone</th>
+			<th class="edit"></th>
+		</tr>
+	</thead>
+	<tbody>
+	    #{list listOfTodos, as:'todoItem'}
+	    <tr class="contact" contactId="${todoItem.id}" draggable="true">
+   			<td id="title-${todoItem.id}">${todoItem.title}</td>
+   			<td id="dueDate-${todoItem.id}">${todoItem.dueDate?.format('yyyy-MM-dd')}</td>
+   			<td id="todoDone-${todoItem.id}">${todoItem.todoDone}</td>
+   			<td><a href="@{form(todoItem.id)}">&gt;</a></td>
+   		</tr>
+	    #{/list}
+	</tbody>
+</table>
 
-    <h1>Todo list</h1>
-
-    <h3>Step 3: Create</h3>
-
-    <ul>
-        #{list items:listOfTodos, as:'todoItem'}
-        <li><strong>#{a @show(todoItem.id,todoItem.title)}${todoItem.title}#{/a}</strong> ${todoItem.dueDate?.format('EEEE dd MMMM yyyy')} ${todoItem.todoDone}</li>
-        #{/list}
-    </ul>
-
-</div>
-
-<div class="grid_5">
-    <h1>New Todo</h1>
-    #{form @create()}
-    <label for="titleF">Description:</label>
-    <input id="titleF" type="text" name="title" value=""/> <br/>
-    <label for="dueDateF">Due date:</label>
-    <input id="dueDateF" type="date" name="dueDate" value="2010-10-18" valueAsDate/>
-    <br/>
-
-    <input type="submit" value="Create"/>
-    #{/form}
-</div>
