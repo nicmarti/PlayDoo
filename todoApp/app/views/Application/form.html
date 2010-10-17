@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Form' /}
+
+#{form @save()}
+<input type="hidden" name="todo.id" value="${todo?.id}">
+
+<p class="field">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="todo.title" value="${todo?.title}">
+    <span class="error">${errors.forKey('todo.title')}</span>
+</p>
+
+
+<p class="field">
+    <label for="dueDate">Birth date:</label>
+    <input type="text" id="dueDate" name="todo.dueDate" value="${todo?.dueDate?.format('yyyy-MM-dd')}">
+    <span class="error">${errors.forKey('todo.dueDate')}</span>
+</p>
+
+
+#{field 'todo.todoDone'}
+<p class="field">
+    <label for="${field.id}">Task completed ?</label>
+    <input id="${field.id}" type="checkbox" value="true" name="todo.todoDone" #{if field.value}checked="true"#{/if}
+    class="${field.errorClass}" />
+    <span class="error">#{if field.error}Please check your model#{/if}</span>
+</p>
+#{/field}
+
+
+<p class="buttons">
+    <a href="@{index()}">Cancel</a> or <input type="submit" value="Save this todo" id="saveContact">
+</p>
+
+<script type="text/javascript" charset="utf-8">
+    $("#dueDate").datepicker({dateFormat:'yy-mm-dd', showAnim:'fadeIn'})
+</script>
+#{/form}

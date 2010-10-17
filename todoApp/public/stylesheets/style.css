@@ -41,10 +41,10 @@ html
 	min-height: 300px;
 
 	background: #699f08;
-	background: -webkit-gradient(radial,50% -50,50,50% -100,220, from(rgba(143,221,9,1)), to(rgba(143,221,9,0))) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#699f08), to(#172302)) no-repeat;
-	background: -moz-radial-gradient(50% 10%, closest-side, rgba(143,221,9,1), rgba(143,221,9,0)) no-repeat, -moz-linear-gradient(-90deg, #699f08, #172302) no-repeat;
-	-webkit-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a01 0 1px 1px, #92dd10 0 -1px 0px;
-	-moz-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a01 0 1px 1px, #92dd10 0 -1px 0px;
+	background: -webkit-gradient(radial,50% -50,50,50% -100,220, from(rgba(9,139,221,1)), to(rgba(143,221,247,0))) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#69aaec), to(#172188)) no-repeat;
+	background: -moz-radial-gradient(50% 10%, closest-side, rgba(143,229,242,1), rgba(143,229,242,0)) no-repeat, -moz-linear-gradient(-90deg, #69aaec, #172188) no-repeat;
+	-webkit-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a2a 0 1px 1px, #92e4f6 0 -1px 0px;
+	-moz-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a2a 0 1px 1px, #92e4f6 0 -1px 0px;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -165,12 +165,12 @@ thead
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 
-	background: #355203;
-	background: -webkit-gradient(linear, left top, left bottom, from(#355203), to(#243503));
-	background: -moz-linear-gradient(-90deg, #355203, #243503);
-	border: 1px solid #1f3003;
+	background: #3565f9;
+	background: -webkit-gradient(linear, left top, left bottom, from(#3556fa), to(#2439b2));
+	background: -moz-linear-gradient(-90deg, #3556fa, #2439b2);
+	border: 1px solid #1f2a8d;
 
-	color: #619604;
+	color: #61a3db;
 	text-shadow: rgba(0,0,0,0.5) 0 -1px 1px;
 }
 
@@ -416,19 +416,15 @@ footer
 	cursor: default;
 }
 
-footer a
+footer p
 {
-	color: #111;
+	color: #888;
 	font-family: "Qlassik Bold";
 	text-shadow: rgba(255,255,255,1) 0 1px 1px;
 	text-decoration: none;
 	font-size: 14px;
 }
 
-footer a:hover
-{
-	opacity: .7;
-}
 
 /* ----------------------------------------------
  * FIXES
