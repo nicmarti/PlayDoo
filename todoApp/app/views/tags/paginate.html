@@ -1,0 +1,22 @@
+*{*** A simple tag to generate the pagination links ***}*
+    Go to page:
+    #{if _pageIndex==0}
+        <strong>0</strong>
+    #{/if}
+    #{else}
+        #{list items:0.._pageIndex-1, as:'page'}
+            <a href="@{index()}?page=${page}">${page}</a>
+        #{/list}
+        <strong>${_pageIndex}</strong>
+    #{/else}
+
+    #{if _pageIndex+1<=_totalPage}
+        #{list items:_pageIndex+1.._totalPage, as:'page'}
+            <a href="@{index()}?page=${page}">${page}</a>
+        #{/list}
+    #{/if}
+
+          
+
+
+
