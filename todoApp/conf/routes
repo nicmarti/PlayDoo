@@ -1,5 +1,5 @@
 
-
+# Customer route to demonstrate how to write nice URL
 GET /event/{title}/{id} Application.show
 
 # Home page

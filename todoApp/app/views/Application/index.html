@@ -41,3 +41,42 @@
     </tr>
     </tfoot>
 </table>
+<br/>
+<h1>New Todo</h1>
+
+#{ifErrors}
+   <div class="ui-state-error">     
+    ${errors}
+   </div>
+#{/ifErrors}
+
+#{if flash.success}
+    <div class="ui-state-focus">
+        ${flash.success}
+    </div>
+#{/if}
+
+#{form @create()}
+
+<p class="field">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="todo.title" value="${flash.todo_title}">
+    <span class="error">${errors.forKey('flash.todo_title')}</span>
+</p>
+
+
+<p class="field">
+    <label for="dueDate">Due date:</label>
+    <input type="text" id="dueDate" name="todo.dueDate" value="${flash.todo_dueDate}">
+    <span class="error">${errors.forKey('flash.todo_dueDate')}</span>
+</p>
+
+
+<p class="buttons">
+    <input type="submit" value="Save this todo" id="saveContact">
+</p>
+
+<script type="text/javascript" charset="utf-8">
+    $("#dueDate").datepicker({dateFormat:'yy-mm-dd', showAnim:'fadeIn'})
+</script>
+#{/form}

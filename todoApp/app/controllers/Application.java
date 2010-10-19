@@ -9,9 +9,7 @@ import java.util.List;
 public class Application extends Controller {
 
     public static void index(int page) {
-        if (page == -1) {
-            page = 0;
-        }
+
         int pageSize = 5;
         List<Todo> listOfTodos = Todo.fetch(page, pageSize);
         int totalPage = computeTotalPage(pageSize, Todo.count());
@@ -23,12 +21,24 @@ public class Application extends Controller {
             return 1;
         }
 
-        return (int) Math.rint(total/pageSize)+1;
+        return (int) Math.rint(total / pageSize) + 1;
     }
 
-    public static void create(String title, Date dueDate) {
-        Todo todo = new Todo(title, dueDate);
-        todo.save();
+    public static void create(Todo todo) {
+        validation.required(todo.dueDate);
+        validation.required(todo.title);
+        validation.future(todo.dueDate);
+
+        if (validation.hasErrors()) {
+            params.flash(); // add http parameters to the flash scope
+            if (todo.title != null) flash.put("todo_title", todo.title);
+            if (todo.dueDate != null) flash.put("todo_dueDate", todo.dueDate);
+            validation.keep(); // keep the errors for the next request
+            index(0);
+        }
+
+        todo.validateAndSave();
+        flash.success("New todo created");
         index(0);
     }
 

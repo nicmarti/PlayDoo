@@ -28,6 +28,7 @@
 
     <nav>
         <a id="home" href="@{index()}" class="${request.action =~ /index/ ? 'selected' : ''}">Home</a>
+        <a id="create" href="@{create()}" class="${request.action =~ /create/ ? 'selected' : ''}">Create</a>
     </nav>
 
     <section>
