@@ -6,17 +6,31 @@
 		<tr>
 			<th class="title">Title</th>
 			<th class="dueDate">Due Date</th>
-			<th class="todoDone">todoDone</th>
-			<th class="edit"></th>
+			<th class="todoDone">Change?</th>
+			<th class="edit">Done</th>
+			<th class="edit">Edit</th>
 		</tr>
 	</thead>
 	<tbody>
 	    #{list listOfTodos, as:'todoItem'}
 	    <tr class="contact" contactId="${todoItem.id}" draggable="true">
-   			<td id="title-${todoItem.id}">${todoItem.title}</td>
+   			<td id="title-${todoItem.id}">
+                <span class="${todoItem.todoDone}_text">${todoItem.title}</span>
+               </td>
    			<td id="dueDate-${todoItem.id}">${todoItem.dueDate?.format('yyyy-MM-dd')}</td>
-   			<td id="todoDone-${todoItem.id}">${todoItem.todoDone}</td>
-   			<td><a href="@{form(todoItem.id)}">&gt;</a></td>
+
+            <td> #{a @done(todoItem.id)}Done#{/a}</td>
+
+            <td id="todoDone-${todoItem.id}">
+            #{if todoItem?.todoDone == false}
+            <div class="ui-icon ui-widget-content ui-icon-close"></div>
+            #{/if}
+            #{else}
+                <div class="ui-icon ui-widget-content ui-icon-check"></div>
+            #{/else}
+            </td>
+
+            <td><a href="@{form(todoItem.id)}">&gt;</a></td>
    		</tr>
 	    #{/list}
 	</tbody>

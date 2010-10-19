@@ -43,4 +43,11 @@ public class Application extends Controller {
 
     }
 
+    public static void done(Long id){
+        Todo todo=Todo.findById(id);
+        todo.todoDone=true;
+        todo.save();
+        index();
+    }
+
 }

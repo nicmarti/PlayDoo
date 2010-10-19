@@ -19,7 +19,7 @@ html
 
 	background: #eee;
 
-	color: #fff;
+	color: #000;
 	font: 13px "Helvetica";
 }
 
@@ -34,15 +34,15 @@ html
  * ------------------------------------------- */
 #zencontact
 {
-	width: 700px;
-	margin: 100px auto 20px;
+	width: 860px;
+	margin: 40px auto 20px;
 	padding: 0 10px 10px;
 	position: relative;
 	min-height: 300px;
 
 	background: #699f08;
-	background: -webkit-gradient(radial,50% -50,50,50% -100,220, from(rgba(9,139,221,1)), to(rgba(143,221,247,0))) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#69aaec), to(#172188)) no-repeat;
-	background: -moz-radial-gradient(50% 10%, closest-side, rgba(143,229,242,1), rgba(143,229,242,0)) no-repeat, -moz-linear-gradient(-90deg, #69aaec, #172188) no-repeat;
+	background: -webkit-gradient(radial,50% -50,50,50% -100,220, from(rgba(171,202,221,1)), to(rgba(143,221,247,0))) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#cbd9e8), to(#7c90e4)) no-repeat;
+	background: -moz-radial-gradient(50% 10%, closest-side, rgba(105,178,247,1), rgba(174,211,246,0)) no-repeat, -moz-linear-gradient(-90deg, #cbd9e8, #7cade4) no-repeat;
 	-webkit-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a2a 0 1px 1px, #92e4f6 0 -1px 0px;
 	-moz-box-shadow: rgba(0,0,0,0.4) 0 15px 40px, #060a2a 0 1px 1px, #92e4f6 0 -1px 0px;
 	border-radius: 10px;
@@ -170,7 +170,7 @@ thead
 	background: -moz-linear-gradient(-90deg, #3556fa, #2439b2);
 	border: 1px solid #1f2a8d;
 
-	color: #61a3db;
+	color: #aecde7;
 	text-shadow: rgba(0,0,0,0.5) 0 -1px 1px;
 }
 
@@ -268,13 +268,16 @@ th.dueDate, td.dueDate input
 
 th.todoDone, td.todoDone input
 {
-    width: 170px;
+    width: 70px;
 }
 
 th.edit 
 {
-    width: 25px;
+    width: 45px;
 }
+
+
+
 
 /* ----------------------------------------------
  * ADD
@@ -433,4 +436,8 @@ footer p
 {
    -khtml-user-drag: element;
 }
- 
+
+.true_text {
+    text-decoration:line-through;
+    font-style:italic;
+}

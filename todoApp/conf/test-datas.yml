@@ -22,4 +22,39 @@ Todo(t5):
   title: Dentiste
   todoDone: false
   dueDate: 2010-10-28
-      
+
+Todo(t6):
+  title: Buy a train ticket from Genève to Paris.
+  todoDone: false
+  dueDate: 2010-11-28
+
+Todo(t7):
+  title: Book an hotel room for Devoxx conference
+  todoDone: false
+  dueDate: 2010-11-10
+
+Todo(t8):
+  title: Find a place for the Paris JUG 3rd anniversary
+  todoDone: false
+  dueDate: 2011-02-01
+
+Todo(t9):
+  title: Organiser la soirée Java Performance en novembre
+  todoDone: false
+  dueDate: 2010-11-09
+
+Todo(t10):
+  title: Buy a plane ticket for San Francisco
+  todoDone: false
+  dueDate: 2011-03-01
+
+Todo(t11):
+  title: Palabras y comidas
+  todoDone: false
+  dueDate: 2011-02-01
+
+Todo(t12):
+  title: Révision des 30000 km de la voiture
+  todoDone: false
+  dueDate: 2011-04-01
+  
