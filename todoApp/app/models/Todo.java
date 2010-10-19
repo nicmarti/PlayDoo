@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Simple Entity
@@ -22,8 +23,12 @@ public class Todo extends Model {
     public Date dueDate;
 
     public Todo(String title, Date dueDate) {
-        this.title=title;
-        this.dueDate=dueDate;
-        todoDone=false;
+        this.title = title;
+        this.dueDate = dueDate;
+        todoDone = false;
+    }
+
+    public static List<Todo> fetch(int page, int pageSize) {
+          return Todo.find("from Todo t order by dueDate").fetch(page, pageSize);
     }
 }
