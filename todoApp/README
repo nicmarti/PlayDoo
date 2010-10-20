@@ -1,0 +1,19 @@
+
+This Play! Framework requires Play! v1.1RC2 or better
+
+It demonstrates a simple TodoList application.
+I use this project as a demo, I presented this application
+at Soft-Shake Geneva 2008.
+
+Try "git tags" to retrieve the list of steps I wrote
+to create this application.
+
+Thanks to G.Bort for the Zencontact CSS3 stylesheets
+that I adapted to PlayDoo
+
+Enjoy!
+
+Nicolas Martignole
+october 2010
+http://touilleur-express.fr/
+
