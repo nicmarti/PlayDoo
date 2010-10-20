@@ -19,7 +19,7 @@
                </td>
    			<td id="dueDate-${todoItem.id}">${todoItem.dueDate?.format('yyyy-MM-dd')}</td>
 
-            <td> #{a @done(todoItem.id)}Done#{/a}</td>
+            <td>#{showDoneTag todoItem:todoItem/}</td>
 
             <td id="todoDone-${todoItem.id}">
             #{if todoItem?.todoDone == false}
@@ -59,16 +59,20 @@
 #{form @create()}
 
 <p class="field">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="todo.title" value="${flash.todo_title}">
-    <span class="error">${errors.forKey('flash.todo_title')}</span>
+    #{field 'todo.title'}
+    <label for="${field.id}">Title:</label>
+    <input type="text" id="${field.title}" name="${field.name}" value="${field.value}" class="${field.errorClass}">
+    <span class="error">${field.error}</span>
+    #{/field}
 </p>
 
 
 <p class="field">
-    <label for="dueDate">Due date:</label>
-    <input type="text" id="dueDate" name="todo.dueDate" value="${flash.todo_dueDate}">
-    <span class="error">${errors.forKey('flash.todo_dueDate')}</span>
+    #{field 'todo.dueDate'}
+    <label for="${field.id}">Due date:</label>
+    <input type="text" id="${field.dueDate}" name="${field.name}" value="${flash.value}" class="${field.errorClass}">
+    <span class="error">${field.error}</span>
+    #{/field}
 </p>
 
 

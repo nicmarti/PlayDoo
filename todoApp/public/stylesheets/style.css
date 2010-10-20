@@ -188,8 +188,18 @@ tfoot {
 }
 
 tfoot a, a:link, a:hover {
-    color: #e8f5ff;
+    color: #fff;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-right:4px;
+    padding-left:4px;
 }
+
+.contact a, a:link, a:hover {
+    color: #5050b1;
+}
+
+
 tfoot strong{
     color: #ffdd99;
     font-weight:bold;

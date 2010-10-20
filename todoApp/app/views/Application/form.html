@@ -21,7 +21,7 @@
 #{field 'todo.todoDone'}
 <p class="field">
     <label for="${field.id}">Task completed ?</label>
-    <input id="${field.id}" type="checkbox" value="true" name="todo.todoDone" #{if field.value}checked="true"#{/if}
+    <input id="${field.id}" name="todo.todoDone" type="checkbox" value="true" #{if field.value == true}checked="true"#{/if}
     class="${field.errorClass}" />
     <span class="error">#{if field.error}Please check your model#{/if}</span>
 </p>

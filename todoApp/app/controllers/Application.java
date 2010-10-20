@@ -29,11 +29,17 @@ public class Application extends Controller {
         validation.required(todo.title);
         validation.future(todo.dueDate);
 
+        // Go through a Threadlocal
         if (validation.hasErrors()) {
-            params.flash(); // add http parameters to the flash scope
+
+            //params.flash(); // add http parameters to the flash scope
             if (todo.title != null) flash.put("todo_title", todo.title);
             if (todo.dueDate != null) flash.put("todo_dueDate", todo.dueDate);
             validation.keep(); // keep the errors for the next request
+
+
+            System.out.println("Test "+validation.errorsMap());
+
             index(0);
         }
 
@@ -56,6 +62,12 @@ public class Application extends Controller {
     }
 
     public static void save(Todo todo) {
+        // Parameter todoDone is a checkbox. In HTML when it's not checked
+        // the HTTP param is null. If the param is null then the Todo item is set to "undone"
+        if(params.get("todo.todoDone")==null){
+            todo.todoDone=false;
+        }
+
         if (validation.hasErrors()) {
             if (request.isAjax()) error("Invalid value");
             render("@form", todo);
